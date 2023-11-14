@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#87ceeb"/>
+    <meta name="description" content="music player">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./images/image-144.jpg">
+    <link rel="apple-touch-icon" href="./images/image.jpg">
+    <link rel="shortcut icon" href="./images/image-144.jpg" type="image/x-icon">
+    <!-- <link rel="import" href="component.html"> -->
+    <title>music-lock-screen</title>
+  </head>
+  <body>
+    <main>
+      <div class="overlay">
+        <div class="top">
+          <svg class="back extra">
+            <use xlink:href="./icons/bootstrap-icons.svg#arrow-left" />
+          </svg>
+          <span class="sam">samsung music</span>
+          <svg class="main-option extra">
+            <use xlink:href="./icons/bootstrap-icons.svg#three-dots-vertical" />
+          </svg>
+          <div class="pop-out">
+            <a href="./settings.html" class="settings">
+            settings
+            </a>
+            <h4 class="settings">
+            more...
+            </h4>
+          </div>
+        </div>
+        <div class="img-container paused">
+          <img src="./images/image.jpg" alt="" />
+        </div>
+        <div class="title"></div>
+        <div class="artist"></div>
+        <input type="range" class="progress-slider" value="0">
+        <div class="timer">
+          <span class="played-time">0:00</span>
+          <span class="remaining-time">0:00</span>
+        </div>
+
+        <!-- next play/pause skip buttons  -->
+        <div class="controls">
+          <!-- previous button -->
+          <svg class="control-btn prev">
+            <use xlink:href="./icons/bootstrap-icons.svg#skip-backward-fill" />
+          </svg>
+          <!-- play/pause button -->
+          <svg class="play-pause control-btn">
+            <use xlink:href="./icons/bootstrap-icons.svg#play-fill" />
+          </svg>
+          <svg class="control-btn next">
+            <use xlink:href="./icons/bootstrap-icons.svg#skip-forward-fill" />
+          </svg>
+        </div>
+
+        <!-- extra functionalities  -->
+        <!-- show play-list,add or remove favorite, loop, shuffle -->
+          <div class="controls extras ">
+            <svg class="extra shuffle">
+            <use xlink:href="./icons/bootstrap-icons.svg#shuffle" />
+          </svg>
+          <svg class="extra play-list-icon">
+            <use xlink:href="./icons/bootstrap-icons.svg#music-note-list" />
+          </svg> 
+          <svg class="extra fav">
+            <use xlink:href="./icons/bootstrap-icons.svg#heart" />
+          </svg> 
+          <svg class="extra loop">
+            <use xlink:href="./icons/bootstrap-icons.svg#arrow-repeat" />
+          </svg>
+          </div>
+          <div class="play-list">
+            <div class="list">
+              <!-- markup to be filled by script -->
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script defer src="./index.js" type="module"></script>
+  <script defer src="./playList.mjs" type="module"></script>
+  <script>
+    (async ()=>{
+       if (
+  "serviceWorker" in navigator 
+  && !location.host.includes("localhost") || 
+  !location.host.includes("127.0.0.1")
+) {
+  try {
+   const registration = await navigator.serviceWorker.register("./serviceWorker.js");
+   if(!registration.active) console.log("not registered");
+  } catch (error) {
+    console.log(
+      `something  went wrong service serviceWorker not registered ${error}`
+    );
+  }
+}else{
+alert("serviceworker is not asupported in your browser")
+}
+    })()
+  </script>
+</html>

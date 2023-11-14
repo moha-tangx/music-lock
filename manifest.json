@@ -1,0 +1,40 @@
+{
+  "name": "music player app",
+  "short_name": "mucic player",
+  "start_url": ".",
+  "description": "steam music",
+  "id": "music-app",
+  "serviceworker": {
+    "src": "./serviceWorker.js"
+  },
+
+  "icons": [
+    {
+      "src": "./images/image.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg"
+    },
+    {
+      "src": "./images/image-144.jpg",
+      "sizes": "144x144",
+      "type": "image/jpg",
+      "purpose": "any"
+    },
+    {
+      "src": "./images/image.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/image-144.jpg",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#87ceeb",
+  "background_color": "#87ceeb",
+  "display": "standalone",
+  "orientation": "portrait",
+  "display_override": ["fullscreen", "minimal-ui"],
+  "protocol_handlers": []
+}

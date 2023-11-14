@@ -1,0 +1,26 @@
+[
+  {
+    "img": "./images/marvels-spider-man.jpg",
+    "src": "./audio/TCP_CSS_Podcast__Episode_002_v2.0_FINAL.mp3",
+    "fav": false,
+    "genre": "podcast",
+    "artist": "anna & andy",
+    "title": "TCP_CSS_Podcast__Episode_002_v2.0_FINAL.mp3"
+  },
+  {
+    "img": "./images/pebbles.jpg",
+    "src": "./audio/Al_Kahf.mp3",
+    "fav": true,
+    "genre": "the holy Quran",
+    "artist": "Abubakar Ashadiry",
+    "title": "Al-khaf"
+  },
+  {
+    "img": "./images/pebbles.jpg",
+    "src": "./audio/Al_Ikhlas.mp3",
+    "fav": true,
+    "genre": "the holy Quran",
+    "artist": "Abubakar Ashadiry",
+    "title": "al-Ikhlas"
+  }
+]
